@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4gulvour0kfq"
-path="res://.godot/imported/iron_sword.png-cf37c23089c0b9ad44b4167dc2e4d8b0.ctex"
+uid="uid://ctwrjbo5jxtfs"
+path="res://.godot/imported/iron_spear.png-3a84989e0050028889b444f76e86b0cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/iron_sword.png"
-dest_files=["res://.godot/imported/iron_sword.png-cf37c23089c0b9ad44b4167dc2e4d8b0.ctex"]
+source_file="res://Images/Weapons/iron_spear.png"
+dest_files=["res://.godot/imported/iron_spear.png-3a84989e0050028889b444f76e86b0cf.ctex"]
 
 [params]
 

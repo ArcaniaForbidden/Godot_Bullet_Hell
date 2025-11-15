@@ -15,9 +15,9 @@ var input_direction = Vector2.ZERO
 var last_direction = Vector2.RIGHT
 
 func _ready():
-	var iron_spear1 = preload("res://Scenes/IronSpear.tscn").instantiate()
-	var iron_spear2 = preload("res://Scenes/IronSpear.tscn").instantiate()
-	var iron_spear3 = preload("res://Scenes/IronSpear.tscn").instantiate()
+	var iron_spear1 = preload("res://Scenes/Weapons/IronSpear.tscn").instantiate()
+	var iron_spear2 = preload("res://Scenes/Weapons/IronSpear.tscn").instantiate()
+	var iron_spear3 = preload("res://Scenes/Weapons/IronSpear.tscn").instantiate()
 	weapon_manager.add_weapon(iron_spear1)
 	weapon_manager.add_weapon(iron_spear2)
 	weapon_manager.add_weapon(iron_spear3)

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://mlwj5btemeir"]
+
+[ext_resource type="Script" uid="uid://des51wkqc3ul2" path="res://Scripts/Weapons/IronSpear.gd" id="1_eamwg"]
+[ext_resource type="Texture2D" uid="uid://ctwrjbo5jxtfs" path="res://Images/Weapons/iron_spear.png" id="2_uqowa"]
+
+[node name="IronSpear" type="Node2D"]
+rotation = -0.785398
+script = ExtResource("1_eamwg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_uqowa")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(7, -12, 12, -12, 12, -7, 9, -4, 4, -4, 4, -9)

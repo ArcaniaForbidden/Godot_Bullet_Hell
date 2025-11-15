@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctwrjbo5jxtfs"
-path="res://.godot/imported/iron_spear.png-5d6096e83ab8393558125df12281ad45.ctex"
+uid="uid://vndthy0it7do"
+path="res://.godot/imported/rabbit.png-a02f2a261db0c0f78aa223b80661eb2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/iron_spear.png"
-dest_files=["res://.godot/imported/iron_spear.png-5d6096e83ab8393558125df12281ad45.ctex"]
+source_file="res://Images/rabbit.png"
+dest_files=["res://.godot/imported/rabbit.png-a02f2a261db0c0f78aa223b80661eb2d.ctex"]
 
 [params]
 

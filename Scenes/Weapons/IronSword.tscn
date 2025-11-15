@@ -1,15 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://bssyw3miydpom"]
 
-[ext_resource type="Script" uid="uid://dkud7v0i7bu2g" path="res://Scripts/IronSword.gd" id="1_bf1c1"]
-[ext_resource type="Texture2D" uid="uid://b4gulvour0kfq" path="res://Images/iron_sword.png" id="1_rx4wl"]
+[ext_resource type="Script" uid="uid://dkud7v0i7bu2g" path="res://Scripts/Weapons/IronSword.gd" id="1_a83lp"]
+[ext_resource type="Texture2D" uid="uid://b4gulvour0kfq" path="res://Images/Weapons/iron_sword.png" id="2_bw38v"]
 
 [node name="IronSword" type="Node2D"]
 rotation = -0.785398
-script = ExtResource("1_bf1c1")
+script = ExtResource("1_a83lp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_rx4wl")
+texture = ExtResource("2_bw38v")
 
 [node name="Area2D" type="Area2D" parent="."]
 

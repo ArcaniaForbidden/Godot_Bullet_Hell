@@ -1,21 +1,30 @@
 extends Node2D
 
-@onready var weapon_manager = get_parent()
-
+var damage = 10
 var orbit_radius = 25
 var rotation_offset = deg_to_rad(45)
 var attack_range: float = 100.0
 var attack_duration: float = 0.33
-var attack_cooldown: float = 1.5
+var attack_cooldown: float = 1.33
 var is_attacking: bool = false
 var has_cooldown: bool = false
 var cooldown_timer: float = 0.0
-var original_position: Vector2
 var target_orbit_position: Vector2
 var return_speed := 5.0
+var hit_enemies := {}
 
 func _ready() -> void:
 	has_cooldown = true
+	$Area2D.body_entered.connect(_on_body_entered)
+
+func _on_body_entered(enemy):
+	if !is_attacking:
+		return
+	if enemy in hit_enemies:
+		return
+	if enemy.has_method("apply_damage"):
+		hit_enemies[enemy] = true
+		enemy.apply_damage(damage)
 
 # --- Process the weapon's behavior ---
 func _process(delta):
@@ -45,7 +54,6 @@ func perform_attack():
 	is_attacking = true
 	has_cooldown = true
 	cooldown_timer = attack_cooldown
-	original_position = global_position
 	var mouse_position = get_global_mouse_position()
 	var direction = (mouse_position - global_position).normalized()
 	var target_position = global_position + direction * attack_range
@@ -58,3 +66,4 @@ func perform_attack():
 # --- Reset the weapon after the attack ---
 func _on_attack_finished():
 	is_attacking = false
+	hit_enemies.clear() 
