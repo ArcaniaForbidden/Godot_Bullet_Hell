@@ -15,6 +15,7 @@ var input_direction = Vector2.ZERO
 var last_direction = Vector2.RIGHT
 
 func _ready():
+	animated_sprite2d.play("idle")
 	var iron_spear1 = preload("res://Scenes/Weapons/IronSpear.tscn").instantiate()
 	var iron_spear2 = preload("res://Scenes/Weapons/IronSpear.tscn").instantiate()
 	var iron_spear3 = preload("res://Scenes/Weapons/IronSpear.tscn").instantiate()
@@ -23,8 +24,7 @@ func _ready():
 	weapon_manager.add_weapon(iron_spear3)
 
 func _process(delta):
-	var input: Vector2 = Vector2(Input.get_axis("ui_left", "ui_right"),
-								 Input.get_axis("ui_up", "ui_down")).normalized()
+	var input: Vector2 = Vector2(Input.get_axis("ui_left", "ui_right"), Input.get_axis("ui_up", "ui_down")).normalized()
 	if input.length() > 0:
 		last_direction = input
 	if dash_cooldown_timer > 0:

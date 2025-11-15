@@ -2,15 +2,14 @@ extends Camera2D
 
 @onready var player = get_parent()
 
-# Camera settings
 var zoom_speed = 0.25
-var min_zoom = Vector2(3, 3)  # Zoom in (closer)
-var max_zoom = Vector2(6, 6)      # Zoom out (further)
+var min_zoom = Vector2(3, 3)
+var max_zoom = Vector2(6, 6)
 
 func _ready():
-	print(player)
 	zoom = min_zoom
-	global_position = player.position
+	if player:
+		global_position = player.position
 
 func _input(event):
 	if event is InputEventMouseButton:

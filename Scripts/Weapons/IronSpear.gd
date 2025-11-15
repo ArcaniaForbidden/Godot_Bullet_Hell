@@ -17,16 +17,6 @@ func _ready() -> void:
 	has_cooldown = true
 	$Area2D.body_entered.connect(_on_body_entered)
 
-func _on_body_entered(enemy):
-	if !is_attacking:
-		return
-	if enemy in hit_enemies:
-		return
-	if enemy.has_method("apply_damage"):
-		hit_enemies[enemy] = true
-		enemy.apply_damage(damage)
-
-# --- Process the weapon's behavior ---
 func _process(delta):
 	if is_attacking:
 		return  
@@ -41,13 +31,11 @@ func _process(delta):
 	if !is_attacking and !has_cooldown:
 		perform_attack()
 
-# --- Aiming at the mouse ---
 func aim_at_mouse():
 	var mouse_position = get_global_mouse_position()
 	var direction = (mouse_position - global_position).normalized()
 	rotation = direction.angle() + rotation_offset
 
-# --- Perform the attack (lunge) ---
 func perform_attack():
 	if has_cooldown:
 		return
@@ -63,7 +51,15 @@ func perform_attack():
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.finished.connect(Callable(self, "_on_attack_finished"))
 
-# --- Reset the weapon after the attack ---
 func _on_attack_finished():
 	is_attacking = false
 	hit_enemies.clear() 
+
+func _on_body_entered(enemy):
+	if !is_attacking:
+		return
+	if enemy in hit_enemies:
+		return
+	if enemy.has_method("apply_damage"):
+		hit_enemies[enemy] = true
+		enemy.apply_damage(damage)
