@@ -12,6 +12,8 @@ texture_filter = 1
 texture = ExtResource("2_bw38v")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(-4, 1, 9, -12, 12, -12, 12, -9, -1, 4)

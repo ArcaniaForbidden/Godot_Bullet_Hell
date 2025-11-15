@@ -3,7 +3,7 @@ extends Node2D
 var damage = 10
 var orbit_radius = 25
 var rotation_offset = deg_to_rad(45)
-var attack_range: float = 100.0
+var attack_range: float = 150.0
 var attack_duration: float = 0.33
 var attack_cooldown: float = 1.33
 var is_attacking: bool = false
@@ -60,6 +60,6 @@ func _on_body_entered(enemy):
 		return
 	if enemy in hit_enemies:
 		return
-	if enemy.has_method("apply_damage"):
+	if enemy.has_method("take_damage"):
 		hit_enemies[enemy] = true
-		enemy.apply_damage(damage)
+		enemy.take_damage(damage)

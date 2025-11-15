@@ -1,10 +1,11 @@
 extends Camera2D
 
-@onready var player = get_parent()
+@onready var player = get_node_or_null("/root/GameScene/PlayerNode2D")
 
 var zoom_speed = 0.25
 var min_zoom = Vector2(3, 3)
 var max_zoom = Vector2(6, 6)
+var player_alive := true
 
 func _ready():
 	zoom = min_zoom
@@ -19,7 +20,7 @@ func _input(event):
 			zoom_camera(zoom_speed)	
 
 func _process(_delta):
-	if player:
+	if player_alive and player:
 		global_position = player.position
 
 func zoom_camera(delta):
