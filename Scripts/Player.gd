@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var animated_sprite2d = $AnimatedSprite2D
 @onready var weapon_manager = $WeaponManager
 
-var max_health: int = 20
+var max_health: int = 30
 var health: int
 var speed = 150.0
 var dash_speed = 300.0
@@ -16,7 +16,7 @@ var is_dashing = false
 var input_direction = Vector2.ZERO
 var last_direction = Vector2.RIGHT
 var invincible: bool = false
-var invincibility_duration: float = 1.0
+var invincibility_duration: float = 5.0
 var invincibility_timer: float = 0.0
 
 func _ready():

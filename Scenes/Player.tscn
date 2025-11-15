@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://b5pnf1m4xm21i" path="res://Scripts/WeaponManager.gd" id="4_dewec"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpqav"]
-size = Vector2(9.84252, 13)
+size = Vector2(8.85827, 13)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 16
@@ -17,7 +17,7 @@ sprite_frames = ExtResource("1_rpqav")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
+position = Vector2(0.5, 0.5)
 scale = Vector2(1.016, 1)
 shape = SubResource("RectangleShape2D_rpqav")
 

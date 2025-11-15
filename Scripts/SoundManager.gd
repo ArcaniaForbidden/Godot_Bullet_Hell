@@ -9,13 +9,13 @@ var sounds = {
 	"damage": preload("res://Sounds/damage.wav"),
 }
 
-func play(sound_name: String, base_volume_db: float = 0.0, position = null) -> void:
+func play(sound_name: String, base_volume_db: float = 0.0, sound_position = null) -> void:
 	if not sounds.has(sound_name):
 		return
 	var sfx
 	if position != null:
 		sfx = AudioStreamPlayer2D.new()
-		sfx.position = position
+		sfx.position = sound_position
 		sfx.attenuation = 0.5
 	else:
 		sfx = AudioStreamPlayer.new()
