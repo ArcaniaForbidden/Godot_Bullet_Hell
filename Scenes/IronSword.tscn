@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bssyw3miydpom"]
+
+[ext_resource type="Script" uid="uid://dkud7v0i7bu2g" path="res://Scripts/IronSword.gd" id="1_bf1c1"]
+[ext_resource type="Texture2D" uid="uid://b4gulvour0kfq" path="res://Images/iron_sword.png" id="1_rx4wl"]
+
+[node name="IronSword" type="Node2D"]
+rotation = -0.785398
+script = ExtResource("1_bf1c1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_rx4wl")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-4, 1, 9, -12, 12, -12, 12, -9, -1, 4)

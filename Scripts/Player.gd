@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var animated_sprite2d = $AnimatedSprite2D
+@onready var weapon_manager = $WeaponManager
 
 var speed = 150.0
 var dash_speed = 300.0
@@ -12,6 +13,14 @@ var is_running = false
 var is_dashing = false
 var input_direction = Vector2.ZERO
 var last_direction = Vector2.RIGHT
+
+func _ready():
+	var iron_spear1 = preload("res://Scenes/IronSpear.tscn").instantiate()
+	var iron_spear2 = preload("res://Scenes/IronSpear.tscn").instantiate()
+	var iron_spear3 = preload("res://Scenes/IronSpear.tscn").instantiate()
+	weapon_manager.add_weapon(iron_spear1)
+	weapon_manager.add_weapon(iron_spear2)
+	weapon_manager.add_weapon(iron_spear3)
 
 func _process(delta):
 	var input: Vector2 = Vector2(Input.get_axis("ui_left", "ui_right"),
