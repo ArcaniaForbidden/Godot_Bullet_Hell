@@ -7,6 +7,7 @@ var music_volume_percentage: int = 100
 var current_hover_player: AudioStreamPlayer = null
 var sounds = {
 	"damage": preload("res://Sounds/damage.wav"),
+	"player_hurt": preload("res://Sounds/player_hurt.wav"),
 }
 
 func play(sound_name: String, base_volume_db: float = 0.0, sound_position = null) -> void:

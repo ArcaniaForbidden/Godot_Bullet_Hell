@@ -85,9 +85,9 @@ func player_takes_damage(damage: int):
 	print("Player remaining health:", health)
 	if health <= 0:
 		player_die()
-	#else:
-		#if SoundManager:
-			#SoundManager.play("player_hurt", 0.0, global_position)
+	else:
+		if SoundManager:
+			SoundManager.play("player_hurt", 0.0, global_position)
 
 func player_die():
 	print("Player has died")
